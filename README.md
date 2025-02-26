@@ -16,14 +16,7 @@ Este projeto não tem intenção de representar ou associar qualquer grupo espec
 
 ### Nas próximas versões o projeto será "dockerizado"
 
-#### 1️⃣ **Pré-requisitos**  
-
-Certifique-se de ter instalado:  
-
-- [Node.js (v16+)](https://nodejs.org/)  
-- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)  
-
-#### 2️⃣ **Clonar o repositório**  
+#### 1️⃣ **Clonar o repositório**  
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
@@ -32,29 +25,8 @@ cd seu-repositorio
 
 #### 3️⃣ **Instalar dependências**  
 
-```bash
-npm install
-```
-
-ou, se estiver usando Yarn:  
-
-```bash
-yarn install
-```
-
-#### 4️⃣ **Iniciar o servidor**  
-
-Para rodar o servidor em **modo de desenvolvimento (com hot reload)**:  
-
-```bash
-npm run dev
-```
-
-Para rodar o servidor em **produção**:  
-
-```bash
-npm start
-```
+```docker build -t minha-api .```
+```docker run -d -p 3000:3000 minha-api```
 
 A API ficará disponível em:  
 
