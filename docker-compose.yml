@@ -1,0 +1,12 @@
+services:
+  faces-api:
+    build: .
+    container_name: faces-api
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm start
