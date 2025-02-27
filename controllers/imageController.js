@@ -33,7 +33,7 @@ exports.getImageWithGender = async (req, res) => {
 exports.getRandomImage = async (req, res) => {
     try {
         const { width, height } = req.params;
-        const genderFolder = genderEnum[utils.randomNumber(1, 2)];
+        const genderFolder = genderEnum[utils.randomNumber(1, 3)];
         const imagePath = getImagePath(genderFolder);
 
         const croppedImage = await cropImage(imagePath, width, height);

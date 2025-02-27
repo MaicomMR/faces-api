@@ -19,7 +19,7 @@ exports.validateCropParams = [
 ];
 
 exports.validateGender = [
-    param('gender').isInt({ min: 1, max: 2 }).withMessage('Geight must be 1 or 2'),
+    param('gender').isInt({ min: 1, max: 3 }).withMessage('Geight must be 1 or 3'),
 ];
 
 
