@@ -1,6 +1,7 @@
 const sharp = require('sharp');
 const path = require('path');
 const requestValidator = require('../middlewares/requestValidator')
+const utils = require('../utils/utils')
 
 const genderEnum = {
     1: "men",
@@ -15,7 +16,7 @@ exports.getImage = async (req, res) => {
     try {
         const { gender, width, height } = req.params;
         const genderFolder = genderEnum[gender] || 1;
-        const imagePath = path.join(`public/${genderFolder}`, `${Math.floor(Math.random() * seedImages) + 1}.png`);
+        const imagePath = path.join(`public/${genderFolder}`, `${utils.randomNumber(1, seedImages)}.png`);
 
         const croppedImage = await sharp(imagePath)
             .resize(parseInt(width), parseInt(height))
