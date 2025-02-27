@@ -6,7 +6,10 @@ Todas as imagens usadas neste projeto foram **geradas por inteligência artifici
 
 Os **prompts** utilizados para criar as imagens também foram **gerados por IA**, garantindo um processo imparcial e livre de **viés de gênero, religião, etnia** ou qualquer outro fator que pudesse influenciar a geração das imagens.  
 
-Este projeto não tem intenção de representar ou associar qualquer grupo específico, sendo seu propósito apenas **educacional e técnico**.  
+Este projeto não tem intenção de representar ou associar qualquer grupo específico, sendo seu propósito apenas **educacional e técnico**. 
+
+Imagens geradas a com o repositório:
+https://github.com/lllyasviel/Fooocus
 
 ---
 
