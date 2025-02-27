@@ -15,7 +15,7 @@ const seedImages = 20;
 exports.getImage = async (req, res) => {
     try {
         const { gender, width, height } = req.params;
-        const genderFolder = genderEnum[gender] || 1;
+        const genderFolder = genderEnum[gender];
         const imagePath = path.join(`public/${genderFolder}`, `${utils.randomNumber(1, seedImages)}.png`);
 
         const croppedImage = await sharp(imagePath)
