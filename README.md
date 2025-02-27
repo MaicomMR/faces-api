@@ -43,39 +43,31 @@ A API permite processar imagens enviando parâmetros na URL.
 ### **1️⃣ Rota de Crop de Imagem**  
 
 ```http
-GET /crop/:category/:width/:height
+GET /:category/:width/:height
+example: /1/600/800
 ```
+> Parameters:
 
-Essa rota recorta uma imagem com base nos parâmetros fornecidos.  
+category:
+1 = woman
+2 = men
+3 = undefined
 
-#### 📝 **Parâmetros:**  
+width and height = min: 200px, max: 2000px
 
-- `category` (**obrigatório**) → Um número que representa a pasta onde a imagem está armazenada.  
-  - `1 → men`  
-  - `2 → woman`  
-  - `3 → other`  
-- `width` (**obrigatório**) → Largura desejada para a imagem recortada.  
-- `height` (**obrigatório**) → Altura desejada para a imagem recortada.  
-
-#### 🔗 **Exemplo de requisição:**  
-
-```
-GET http://localhost:3000/crop/1/200/300
-```
-
-**Explicação:**  
-
-- A API buscará a imagem dentro da pasta **`public/men/`**.  
-- A imagem será recortada para **200px de largura** e **300px de altura**.  
-- A resposta será a **imagem processada**.  
-
-#### 📥 **Resposta esperada (imagem recortada)**  
-
-A imagem será enviada diretamente na resposta com o header:  
+> return
+A random image from the selected gender
 
 ```http
-Content-Type: image/jpeg
+GET /random/:width/:height
+example: /random/600/800
 ```
+> Parameters:
+
+width and height = min: 200px, max: 2000px
+
+> return
+A random image from random gender
 
 #### 🚨 **Possíveis erros:**  
 
