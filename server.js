@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
         };
 
         genderFolder = GenderEnum[gender] || 1;
-        seedImages = 4;
+        seedImages = 20;
 
         // res.json({genderFolder});
 
