@@ -12,15 +12,13 @@ const genderEnum = {
 const seedImages = 20;
 
 // Lógica da rota de crop de imagem
-exports.getImage = async (req, res) => {
+exports.getImageWithGender = async (req, res) => {
     try {
         const { gender, width, height } = req.params;
         const genderFolder = genderEnum[gender];
-        const imagePath = path.join(`public/${genderFolder}`, `${utils.randomNumber(1, seedImages)}.png`);
+        const imagePath = getImagePath(genderFolder);
 
-        const croppedImage = await sharp(imagePath)
-            .resize(parseInt(width), parseInt(height))
-            .toBuffer();
+        const croppedImage = await cropImage(imagePath, width, height);
 
         res.set('Content-Type', 'image/jpeg');
         res.send(croppedImage);
@@ -34,6 +32,14 @@ exports.getImage = async (req, res) => {
 
 exports.getRandomImage = async (req, res) => {
     try {
+        const { width, height } = req.params;
+        const genderFolder = genderEnum[utils.randomNumber(1, 2)];
+        const imagePath = getImagePath(genderFolder);
+
+        const croppedImage = await cropImage(imagePath, width, height);
+
+        res.set('Content-Type', 'image/jpeg');
+        res.send(croppedImage);
         return res.json({ WIP: 'Work in Progress'});
     } catch (error) {
         console.error("Erro ao processar a imagem:", error.message);
@@ -42,3 +48,12 @@ exports.getRandomImage = async (req, res) => {
         }
     }
 };
+
+
+function getImagePath(gender = 1, id = utils.randomNumber(1, seedImages)) {
+    return path.join(`public/${gender}`, `/${id}.png`);
+}
+
+function cropImage(imagePath, width = 500, height = 500) {
+    return sharp(imagePath).resize(parseInt(width), parseInt(height)).toBuffer();
+}
