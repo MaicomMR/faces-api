@@ -23,9 +23,9 @@ exports.getImageWithGender = async (req, res) => {
         res.set('Content-Type', 'image/jpeg');
         res.send(croppedImage);
     } catch (error) {
-        console.error("Erro ao processar a imagem:", error.message);
+        console.error("Gender Image - Erro ao processar a imagem:", error.message);
         if (!res.headersSent) {
-            return res.status(500).json({ erro: 'Erro ao processar a imagem', detalhe: error.message });
+            return res.status(500).json({ erro: 'Gender Image - Erro ao processar a imagem', detalhe: error.message });
         }
     }
 };
@@ -40,11 +40,10 @@ exports.getRandomImage = async (req, res) => {
 
         res.set('Content-Type', 'image/jpeg');
         res.send(croppedImage);
-        return res.json({ WIP: 'Work in Progress'});
     } catch (error) {
-        console.error("Erro ao processar a imagem:", error.message);
+        console.error("Random Image - Erro ao processar a imagem:", error.message);
         if (!res.headersSent) {
-            return res.status(500).json({ erro: 'Erro ao processar a imagem', detalhe: error.message });
+            return res.status(500).json({ erro: 'Random Image - Erro ao processar a imagem', detalhe: error.message });
         }
     }
 };
