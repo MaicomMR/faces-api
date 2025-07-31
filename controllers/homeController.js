@@ -8,3 +8,4 @@ exports.getHome = (req, res) => {
 };
 
 // Essa PR vai explodir o mundo?
+// Talvez sim, talvez não...
