@@ -9,4 +9,3 @@ exports.getHome = (req, res) => {
 
 // Essa PR vai explodir o mundo?
 // Talvez sim, talvez não...
-// Teste 1231212344 jkn1kjn4jk12 
