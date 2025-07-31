@@ -10,4 +10,3 @@ exports.getHome = (req, res) => {
 // Essa PR vai explodir o mundo?
 // Talvez sim, talvez não...
 // Eh, mas acho que sim
-// Lero, lero, teste, teste
