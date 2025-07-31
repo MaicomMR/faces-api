@@ -6,3 +6,5 @@ exports.getHome = (req, res) => {
         exemplo: `${baseURL}/crop/1/200/300`
     });
 };
+
+// Essa PR vai explodir o mundo?
