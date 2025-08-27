@@ -64,9 +64,9 @@ jobs:
       - name: Chamando API
         env:
           API_URL:   ${{ secrets.MY_API_URL }}
-          # API_TOKEN: ${{ secrets.MY_API_TOKEN }}
+          API_TOKEN: ${{ secrets.MY_API_TOKEN }}
         run: |
           curl -sS -X POST "$API_URL" \
             -H "Content-Type: application/json" \
-            # -H "Authorization: Bearer $API_TOKEN" \
+            -H "Authorization: Bearer $API_TOKEN" \
             --data-binary @payload.json
